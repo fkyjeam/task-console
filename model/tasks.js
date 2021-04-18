@@ -1,7 +1,7 @@
 const Task = require("./task")
 
 class Tasks {
-  
+
   _listado = {}
 
 
@@ -13,6 +13,14 @@ class Tasks {
     const task = new Task(desc)
     
     this._listado[task.id] = task
+    
+  }
+
+  addTaskFromArray(tasks = []) {
+    tasks.forEach(task => {
+      
+      this._listado[task.id] = task
+    })
     
   }
 
