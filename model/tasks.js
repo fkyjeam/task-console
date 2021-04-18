@@ -1,6 +1,7 @@
 const Task = require("./task")
 
 class Tasks {
+  
   _listado = {}
 
 
@@ -14,6 +15,22 @@ class Tasks {
     this._listado[task.id] = task
     
   }
+
+  get taskListArr() {
+    //console.log('Resp:',tareas)
+    const listado = []
+
+    Object.keys(this._listado).forEach(key => {
+      const tarea = this._listado[key]
+      listado.push(tarea)
+    })
+    
+    // console.log(listado)
+    
+    return listado
+    
+  }
+  
 }
 
 module.exports = Tasks
